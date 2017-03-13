@@ -1,0 +1,6 @@
+aot/
+dist/
+build/
+node_modules/
+src/**/*.js
+src/**/*.js.map

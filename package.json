@@ -1,0 +1,48 @@
+{
+  "name": "angular-quickstart",
+  "version": "1.0.0",
+  "description": "QuickStart package.json from the documentation, supplemented with testing support",
+  "scripts": {
+    "build": "tsc -p src/",
+    "build:watch": "tsc -p src/ -w",
+    "lint": "tslint ./src/**/*.ts -t verbose",
+    "aot-compile-pre": "ngc -p tsconfig-aot-pre.json",
+    "aot-compile": "ngc -p tsconfig-aot.json",
+    "aot-shake": "rollup -c rollup-config.js",
+    "clean": "rm -r build && rm -r aot && rm src/*.js && rm src/*.js.map && rm src/app/*.js && rm src/app/*.js.map",
+    "aot": "npm run aot-compile-pre && npm run aot-compile && npm run aot-shake && node post-build.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@angular/common": "~2.4.0",
+    "@angular/compiler": "~2.4.0",
+    "@angular/compiler-cli": "^2.4.9",
+    "@angular/core": "~2.4.0",
+    "@angular/forms": "~2.4.0",
+    "@angular/http": "~2.4.0",
+    "@angular/platform-browser": "~2.4.0",
+    "@angular/platform-browser-dynamic": "~2.4.0",
+    "@angular/platform-server": "^2.4.9",
+    "@angular/router": "~3.4.0",
+    "core-js": "^2.4.1",
+    "rxjs": "5.0.1",
+    "zone.js": "^0.7.4"
+  },
+  "devDependencies": {
+    "@types/node": "^6.0.46",
+    "canonical-path": "0.0.2",
+    "copy": "^0.3.0",
+    "fs": "0.0.1-security",
+    "lodash": "^4.16.4",
+    "rollup": "^0.41.5",
+    "rollup-plugin-commonjs": "^8.0.2",
+    "rollup-plugin-hash": "^1.2.0",
+    "rollup-plugin-node-resolve": "^2.0.0",
+    "rollup-plugin-uglify": "^1.0.1",
+    "tslint": "^3.15.1",
+    "typescript": "~2.0.10"
+  },
+  "repository": {}
+}

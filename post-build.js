@@ -26,6 +26,7 @@ filesToCopy = [
 copy.each(filesToCopy, 'dist', {flatten: true},function(err, files) {
   if (err) throw err;
 });
-
-htmlFileContent = htmlFileContent.replace(buildFile, latest[buildFile]);
+var buildFileFinalName = latest[buildFile];
+buildFileFinalName = buildFileFinalName.replace('build/', 'scripts/');
+htmlFileContent = htmlFileContent.replace(buildFile, buildFileFinalName);
 fs.writeFileSync('dist/index.html', htmlFileContent);

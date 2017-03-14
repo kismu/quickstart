@@ -6,7 +6,7 @@
 var copy = require('copy');
 var fs = require('fs');
 var latest = JSON.parse(fs.readFileSync('build/latest.json', 'utf8'));
-var htmlFileContent = fs.readFileSync('src/index.html', 'utf8');
+var htmlFileContent = fs.readFileSync('src/index-aot.html', 'utf8');
 var buildFile = Object.keys(latest)[0];
 
 
